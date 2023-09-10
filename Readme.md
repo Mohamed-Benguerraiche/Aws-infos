@@ -38,7 +38,7 @@ Managing SSH configurations for EC2 instances can be cumbersome, especially when
 
 You can customize the script's behavior by editing the config/config.yml file. Here are all the key configurations you can modify:
 
-    ```yaml
+    ```Yaml
     key_path: Specify the path to your SSH key (default: .ssh/aws.pem).
     region_name: Set your preferred AWS region (default: eu-west-3).
     log_file: Path to the log file (default: logs/main_log.log).
