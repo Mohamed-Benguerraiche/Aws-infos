@@ -3,6 +3,8 @@ Simplify the management of your Amazon AWS EC2 instances with this command-line 
 
 You can view this file in french here : [🇫🇷](https://github.com/Mohamed-Benguerraiche/aws-infos/blob/main/i18/readmes/Readme_fr.md)
 
+This code was delopped with the help of H.O.M.E.R, my chatGPT instance.
+
 # An EC2 SSH File Generator
 
 ![License](https://img.shields.io/badge/license-GNU%20GPL%20v3-blue)

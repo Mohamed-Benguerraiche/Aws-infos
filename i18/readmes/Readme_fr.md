@@ -3,6 +3,8 @@ Simplifiez la gestion de vos instances Amazon AWS EC2 avec cet utilitaire Python
 
 Vous pouvez consulter ce fichier en anglais ici : [🇬🇧](https://github.com/Mohamed-Benguerraiche/aws-infos)
 
+Ce code a été développé avec H.O.M.E.R, mon instance chatGPT.
+
 # Un générateur de fichiers EC2 SSH
 
 ![Licence](https://img.shields.io/badge/license-GNU%20GPL%20v3-blue)
