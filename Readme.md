@@ -52,7 +52,7 @@ Managing SSH configurations for EC2 instances can be cumbersome, especially when
 1. This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
 Acknowledgments
 
-    Special thanks to the Free Software Foundation for their work on the GNU General Public License.
-    This script was created by method($man).
+        Special thanks to the Free Software Foundation for their work on the GNU General Public License.
+        This script was created by method($man).
 
 For more details and usage instructions, please refer to the complete source code documentation.
