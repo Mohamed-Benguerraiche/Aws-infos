@@ -36,7 +36,7 @@ Managing SSH configurations for EC2 instances can be cumbersome, especially when
 
 ## Configuration
 
-1. You can customize the script's behavior by editing the config/config.yml file. Here are all the key configurations you can modify:
+    You can customize the script's behavior by editing the config/config.yml file. Here are all the key configurations you can modify:
 
     ```yaml
     key_path: Specify the path to your SSH key (default: .ssh/aws.pem).
