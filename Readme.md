@@ -36,7 +36,7 @@ Managing SSH configurations for EC2 instances can be cumbersome, especially when
 
 ## Configuration
 
-    You can customize the script's behavior by editing the config/config.yml file. Here are all the key configurations you can modify:
+1. You can customize the script's behavior by editing the config/config.yml file. Here are all the key configurations you can modify:
 
     ```yaml
     key_path: Specify the path to your SSH key (default: .ssh/aws.pem).
@@ -49,7 +49,7 @@ Managing SSH configurations for EC2 instances can be cumbersome, especially when
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
+1. This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
 Acknowledgments
 
     Special thanks to the Free Software Foundation for their work on the GNU General Public License.
