@@ -1,7 +1,7 @@
 # Aws-infos
 Simplify the management of your Amazon AWS EC2 instances with this command-line Python utility. Generate hosts.ini files for Ansible, SSH connection strings for each EC2 instance, and configure Microsoft's SSH extension for VSCode. 🚀
 
-You can view this file in french here : [![Drapeau français](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/flag-for-france_1f1eb-1f1f7.png)](https://github.com/Mohamed-Benguerraiche/aws-infos/blob/main/i18/readmes/Readme_fr.md)
+You can view this file in french here : [![🇫🇷]](https://github.com/Mohamed-Benguerraiche/aws-infos/blob/main/i18/readmes/Readme_fr.md)
 
 # An EC2 SSH File Generator
 
