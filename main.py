@@ -31,16 +31,33 @@ import yaml
 import re
 from colorama import Fore, Style
 
-# File paths
-LOG_FILE = 'logs/main_log.log'
-MACHINE_STATUS_LOG = 'logs/machine_status.log'
-HOSTS_INI_FILE = 'files/hosts.ini'
-CONNECTION_HELPER_FILE = 'files/connection_helper'
+def read_config(yaml_file_path):
+    """
+     @brief Read a YAML file and return its content as a dictionary.
+     @param yaml_file_path The path to the YAML file to read.
+     @return The YAML file content as a dictionary.
+    """
+    try:
+        with open(yaml_file_path, 'r') as yaml_file:
+            yaml_content = yaml.safe_load(yaml_file)
+            return yaml_content
+    except Exception as e:
+        print(f"Error reading YAML file: {e}")
+        return {}
+    
+
 CONFIG_FILE = 'config/config.yml'
 
-# Default configuration
-DEFAULT_SSH_KEY_PATH = '.ssh/aws.pem'
-AWS_REGION = 'eu-west-3'
+# Read configuration from config.yml
+config = read_config(CONFIG_FILE)
+
+# File paths
+LOG_FILE = config.get('log_file', 'logs/main_log.log')
+MACHINE_STATUS_LOG = config.get('instance_status_log', 'logs/instance_status.log')
+HOSTS_INI_FILE = config.get('hosts_ini_file', 'files/hosts.ini')
+CONNECTION_HELPER_FILE = config.get('connection_helper_file', 'files/connection_helper')
+DEFAULT_SSH_KEY_PATH = config.get('key_path', '.ssh/aws.pem')
+AWS_REGION = config.get('region_name', 'eu-west-3')
 
 
 def log(message, file='logs/main_log.log'):
@@ -103,8 +120,8 @@ def get_instance_data(region):
             private_ip = instance.get('PrivateDnsName', '')
             instance_status = instance['State']['Name']
 
-            # Machine and region status logging
-            log_machine_status(instance_name, instance_status, region)
+            # Instance and region status logging
+            log_instance_status(instance_name, instance_status, region)
 
             # Create a new instance data structure.
             if instance_ip:
@@ -122,12 +139,12 @@ def remove_ansi_styles(input_string):
     plain_string = ansi_escape.sub('', input_string)
     return plain_string
 
-def log_machine_status(instance_name, status, region):
+def log_instance_status(instance_name, status, region):
     """
-    @brief Groups machine status with colors.
+    @brief Groups instance status with colors.
     @param instance_name Name of the running instance
-    @param status The machine status as defined in the command.
-    @param region The region to which the machine belongs
+    @param status The instance status as defined in the command.
+    @param region The region to which the instance belongs
     """
     # Set ANSI color codes for each state
     if status == 'running':
@@ -138,8 +155,8 @@ def log_machine_status(instance_name, status, region):
         status_color = ''
 
     # Format the message with colors
-    message = f"{Style.BRIGHT}{Fore.YELLOW}Machine {Style.RESET_ALL}:'{Style.BRIGHT}{Fore.LIGHTRED_EX}{instance_name}{Style.RESET_ALL}' - {Style.BRIGHT}{Fore.YELLOW}Status: {Style.RESET_ALL}{Style.DIM}{status_color}{status}{Style.RESET_ALL} - {Style.BRIGHT}{Fore.YELLOW}Region{Style.RESET_ALL}: {Style.DIM}{Fore.BLUE}{region}{Style.RESET_ALL}"
-    print_and_log(message, 'logs/machine_status.log')
+    message = f"{Style.BRIGHT}{Fore.YELLOW}Instance name {Style.RESET_ALL}:'{Style.BRIGHT}{Fore.LIGHTRED_EX}{instance_name}{Style.RESET_ALL}' - {Style.BRIGHT}{Fore.YELLOW}Status: {Style.RESET_ALL}{Style.DIM}{status_color}{status}{Style.RESET_ALL} - {Style.BRIGHT}{Fore.YELLOW}Region{Style.RESET_ALL}: {Style.DIM}{Fore.BLUE}{region}{Style.RESET_ALL}"
+    print_and_log(message, 'logs/instance_status.log')
 
 def generate_files(instance_data, ssh_key):
     """
@@ -186,19 +203,6 @@ def generate_files(instance_data, ssh_key):
     if ssh_config_content:
         open_file(ssh_config_path, 'w', ssh_config_content)
 
-def read_config(yaml_file_path):
-    """
-     @brief Read a YAML file and return its content as a dictionary.
-     @param yaml_file_path The path to the YAML file to read.
-     @return The YAML file content as a dictionary.
-    """
-    try:
-        with open(yaml_file_path, 'r') as yaml_file:
-            yaml_content = yaml.safe_load(yaml_file)
-            return yaml_content
-    except Exception as e:
-        print(f"Error reading YAML file: {e}")
-        return {}
 
 def print_and_log(message, file='logs/main_log.log'):
     print(message)
