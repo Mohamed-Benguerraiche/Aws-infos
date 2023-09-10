@@ -36,15 +36,15 @@ Managing SSH configurations for EC2 instances can be cumbersome, especially when
 
 ## Configuration
 
-You can customize the script's behavior by editing the config/config.yml file. Here are all the key configurations you can modify:
+1. You can customize the script's behavior by editing the config/config.yml file. Here are all the key configurations you can modify:
 
-        ```yaml
-        key_path: Specify the path to your SSH key (default: .ssh/aws.pem).
-        region_name: Set your preferred AWS region (default: eu-west-3).
-        log_file: Path to the log file (default: logs/main_log.log).
-        instance_status_log: Path to the instance status log file (default: logs/instance_status.log).
-        hosts_ini_file: Path to the hosts.ini file (default: files/hosts.ini).
-        connection_helper_file: Path to the connection_helper file (default: files/connection_helper).
+    ```yaml
+    key_path: Specify the path to your SSH key (default: .ssh/aws.pem).
+    region_name: Set your preferred AWS region (default: eu-west-3).
+    log_file: Path to the log file (default: logs/main_log.log).
+    instance_status_log: Path to the instance status log file (default: logs/instance_status.log).
+    hosts_ini_file: Path to the hosts.ini file (default: files/hosts.ini).
+    connection_helper_file: Path to the connection_helper file (default: files/connection_helper).
 
 
 ## License
