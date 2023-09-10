@@ -1,0 +1,41 @@
+\chapter{Aws-\/infos}
+\hypertarget{md__readme}{}\label{md__readme}\index{Aws-\/infos@{Aws-\/infos}}
+\label{md__readme_autotoc_md22}%
+\Hypertarget{md__readme_autotoc_md22}%
+Simplify the management of your Amazon AWS EC2 instances with this command-\/line Python utility. Generate hosts.\+ini files for Ansible, SSH connection strings for each EC2 instance, and configure Microsoft\textquotesingle{}s SSH extension for VSCode. 🚀
+
+You can view this file in french here \+: \href{https://github.com/Mohamed-Benguerraiche/aws-infos/blob/main/i18/readmes/Readme_fr.md}{\texttt{ 🇫🇷}}\hypertarget{md__readme_autotoc_md23}{}\doxysection{\texorpdfstring{An EC2 SSH File Generator}{An EC2 SSH File Generator}}\label{md__readme_autotoc_md23}
+\hypertarget{md__readme_autotoc_md24}{}\doxysubsection{\texorpdfstring{Description}{Description}}\label{md__readme_autotoc_md24}
+This Python script, {\bfseries{EC2 SSH File Generator}}, simplifies the process of managing SSH configurations for Amazon EC2 instances. It automates the generation of SSH files and configuration for EC2 instances, making it easy to retrieve their IP addresses and connect to them, especially after instance restarts when IP addresses are reset.\hypertarget{md__readme_autotoc_md25}{}\doxysubsubsection{\texorpdfstring{Do I need it?}{Do I need it?}}\label{md__readme_autotoc_md25}
+Managing SSH configurations for EC2 instances can be cumbersome, especially when instances are frequently restarted, leading to changing IP addresses. This script aims to solve this problem by automatically generating SSH configuration files, allowing you to seamlessly connect to your EC2 instances, whether they have Public\+Dns\+Names, Private\+Dns\+Names, or neither.\hypertarget{md__readme_autotoc_md26}{}\doxysubsection{\texorpdfstring{Features}{Features}}\label{md__readme_autotoc_md26}
+
+\begin{DoxyItemize}
+\item Automatically generates SSH configuration files\+: {\ttfamily hosts.\+ini}, {\ttfamily connection\+\_\+helper}, {\ttfamily ssh\+\_\+config}.
+\item Handles instances with Public\+Dns\+Names, Private\+Dns\+Names, or no names.
+\item Logs machine status with color-\/coded output for easy visualization.
+\item Supports configuration through a YAML file.
+\item Cross-\/platform compatibility (Linux, mac\+OS, Windows).
+\end{DoxyItemize}\hypertarget{md__readme_autotoc_md27}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{md__readme_autotoc_md27}
+
+\begin{DoxyEnumerate}
+\item Install the required dependencies\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ python\ install\_dependencies.py}
+\DoxyCodeLine{}
+\DoxyCodeLine{2.\ Run\ the\ main\ script:}
+
+\end{DoxyCode}
+ bash python main.\+py
+\end{DoxyEnumerate}\hypertarget{md__readme_autotoc_md28}{}\doxysubsection{\texorpdfstring{Configuration}{Configuration}}\label{md__readme_autotoc_md28}
+
+\begin{DoxyEnumerate}
+\item You can customize the script\textquotesingle{}s behavior by editing the config/config.\+yml file. Here are all the key configurations you can modify\+:
+
+\`{}\`{}\`{}yaml key\+\_\+path\+: Specify the path to your SSH key (default\+: .ssh/aws.\+pem). region\+\_\+name\+: Set your preferred AWS region (default\+: eu-\/west-\/3). log\+\_\+file\+: Path to the log file (default\+: logs/main\+\_\+log.\+log). instance\+\_\+status\+\_\+log\+: Path to the instance status log file (default\+: logs/instance\+\_\+status.\+log). hosts\+\_\+ini\+\_\+file\+: Path to the hosts.\+ini file (default\+: files/hosts.\+ini). connection\+\_\+helper\+\_\+file\+: Path to the connection\+\_\+helper file (default\+: files/connection\+\_\+helper).
+\end{DoxyEnumerate}\hypertarget{md__readme_autotoc_md29}{}\doxysubsection{\texorpdfstring{License}{License}}\label{md__readme_autotoc_md29}
+This project is licensed under the GNU General Public License v3.\+0 -\/ see the LICENSE file for details. Acknowledgments \begin{DoxyVerb}Special thanks to the Free Software Foundation for their work on the GNU General Public License.
+This script was created by method($man).
+\end{DoxyVerb}
+ For more details and usage instructions, please refer to the complete source code documentation. 

@@ -1,0 +1,21 @@
+\chapter{Generating SSH files and configuration for EC2 instances}
+\hypertarget{index}{}\label{index}\index{Generating SSH files and configuration for EC2 instances@{Generating SSH files and configuration for EC2 instances}}
+\hypertarget{index_description_main}{}\doxysection{\texorpdfstring{Description}{Description}}\label{index_description_main}
+This Python script uses Boto3 to retrieve information about EC2 instances and generate SSH configuration files, including hosts.\+ini, connection\+\_\+helper, ssh\+\_\+config, and config.\+yml. It handles cases where an instance has a Public\+Dns\+Name, a Private\+Dns\+Name, or neither.\hypertarget{index_libraries_main}{}\doxysection{\texorpdfstring{Libraries/\+Modules}{Libraries/Modules}}\label{index_libraries_main}
+
+\begin{DoxyItemize}
+\item \href{https://boto3.amazonaws.com/v1/documentation/api/latest/index.html}{\texttt{ boto3}}
+\item \href{https://docs.python.org/3/library/os.html}{\texttt{ os}}
+\item \href{https://pyyaml.org/}{\texttt{ yaml}}
+\item \href{https://docs.python.org/3/library/datetime.html}{\texttt{ datetime}}
+\item \href{https://docs.python.org/3/library/re.html}{\texttt{ re}} (Regular expressions for string matching)
+\item \href{https://pypi.org/project/colorama/}{\texttt{ colorama}} (Styling and coloring terminal text)
+\end{DoxyItemize}\hypertarget{index_author_doxygen_example}{}\doxysection{\texorpdfstring{Auteur}{Auteur}}\label{index_author_doxygen_example}
+
+\begin{DoxyItemize}
+\item Réalisé par method(\$man).
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+For more information, refer to the complete source code documentation. 
+\end{DoxySeeAlso}

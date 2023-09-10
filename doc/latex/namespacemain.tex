@@ -1,0 +1,129 @@
+\doxysection{main Namespace Reference}
+\hypertarget{namespacemain}{}\label{namespacemain}\index{main@{main}}
+
+
+Script for generating SSH files and configuration for EC2 instances.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemain_aeab9364f19a9f658d826a9722ff3027c}{read\+\_\+config}} (yaml\+\_\+file\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacemain_a58232ea760d103359b0671439338914e}{log}} (message, file=\textquotesingle{}logs/main\+\_\+log.\+log\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacemain_a843746d00af85c8c6fa703c8cb477b67}{open\+\_\+file}} (filename, mode, content=None)
+\item 
+\Hypertarget{namespacemain_ab3a3dfd97bf9d1398e5eba240127bfcb}\label{namespacemain_ab3a3dfd97bf9d1398e5eba240127bfcb} 
+{\bfseries get\+\_\+all\+\_\+regions} ()
+\item 
+\mbox{\hyperlink{namespacemain_a8eeadfeefabf8b4349e8d157d8cbcd2e}{get\+\_\+instance\+\_\+data}} (region)
+\item 
+\Hypertarget{namespacemain_a881e78ed5bdb74c93f4012a3f5e02206}\label{namespacemain_a881e78ed5bdb74c93f4012a3f5e02206} 
+{\bfseries remove\+\_\+ansi\+\_\+styles} (input\+\_\+string)
+\item 
+\mbox{\hyperlink{namespacemain_a9f2aefa74d0e3c034b6521a823cea9c8}{log\+\_\+instance\+\_\+status}} (instance\+\_\+name, status, region)
+\item 
+\mbox{\hyperlink{namespacemain_a1548542778c5889e0581aae6cfa48e3f}{generate\+\_\+files}} (instance\+\_\+data, ssh\+\_\+key)
+\item 
+\Hypertarget{namespacemain_ae1ccdaeb53600cb82375d61812769861}\label{namespacemain_ae1ccdaeb53600cb82375d61812769861} 
+{\bfseries print\+\_\+and\+\_\+log} (message, file=\textquotesingle{}logs/main\+\_\+log.\+log\textquotesingle{})
+\item 
+\Hypertarget{namespacemain_aff1285a41173984a36c2efd20646cc3e}\label{namespacemain_aff1285a41173984a36c2efd20646cc3e} 
+{\bfseries check\+\_\+and\+\_\+generate\+\_\+files} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacemain_a93b3f0fa34b8863c396bc25c85e9fc80}\label{namespacemain_a93b3f0fa34b8863c396bc25c85e9fc80} 
+str {\bfseries CONFIG\+\_\+\+FILE} = \textquotesingle{}config/config.\+yml\textquotesingle{}
+\item 
+\Hypertarget{namespacemain_ad2256458892609d0533df5d72a7257ad}\label{namespacemain_ad2256458892609d0533df5d72a7257ad} 
+{\bfseries config} = \mbox{\hyperlink{namespacemain_aeab9364f19a9f658d826a9722ff3027c}{read\+\_\+config}}(CONFIG\+\_\+\+FILE)
+\item 
+\Hypertarget{namespacemain_a6de83433b64b24349644a4c2d839dcb7}\label{namespacemain_a6de83433b64b24349644a4c2d839dcb7} 
+{\bfseries LOG\+\_\+\+FILE} = config.\+get(\textquotesingle{}log\+\_\+file\textquotesingle{}, \textquotesingle{}logs/main\+\_\+log.\+log\textquotesingle{})
+\item 
+\Hypertarget{namespacemain_a91a3fa717fc1a7cd6fb9e6e0f1770f2c}\label{namespacemain_a91a3fa717fc1a7cd6fb9e6e0f1770f2c} 
+{\bfseries MACHINE\+\_\+\+STATUS\+\_\+\+LOG} = config.\+get(\textquotesingle{}instance\+\_\+status\+\_\+log\textquotesingle{}, \textquotesingle{}logs/instance\+\_\+status.\+log\textquotesingle{})
+\item 
+\Hypertarget{namespacemain_a277afa0bd318501590f7c1d36b7aa368}\label{namespacemain_a277afa0bd318501590f7c1d36b7aa368} 
+{\bfseries HOSTS\+\_\+\+INI\+\_\+\+FILE} = config.\+get(\textquotesingle{}hosts\+\_\+ini\+\_\+file\textquotesingle{}, \textquotesingle{}files/hosts.\+ini\textquotesingle{})
+\item 
+\Hypertarget{namespacemain_a3a0a39404f305537ac4ba257bb3e854f}\label{namespacemain_a3a0a39404f305537ac4ba257bb3e854f} 
+{\bfseries CONNECTION\+\_\+\+HELPER\+\_\+\+FILE} = config.\+get(\textquotesingle{}connection\+\_\+helper\+\_\+file\textquotesingle{}, \textquotesingle{}files/connection\+\_\+helper\textquotesingle{})
+\item 
+\Hypertarget{namespacemain_a04bf6afcb1efbfc11bc79d6b0ae84277}\label{namespacemain_a04bf6afcb1efbfc11bc79d6b0ae84277} 
+{\bfseries DEFAULT\+\_\+\+SSH\+\_\+\+KEY\+\_\+\+PATH} = config.\+get(\textquotesingle{}key\+\_\+path\textquotesingle{}, \textquotesingle{}.ssh/aws.\+pem\textquotesingle{})
+\item 
+\Hypertarget{namespacemain_a5a46d0185e54409986ddb173bfaf4aee}\label{namespacemain_a5a46d0185e54409986ddb173bfaf4aee} 
+{\bfseries AWS\+\_\+\+REGION} = config.\+get(\textquotesingle{}region\+\_\+name\textquotesingle{}, \textquotesingle{}eu-\/west-\/3\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Script for generating SSH files and configuration for EC2 instances. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacemain_a1548542778c5889e0581aae6cfa48e3f}\label{namespacemain_a1548542778c5889e0581aae6cfa48e3f} 
+\index{main@{main}!generate\_files@{generate\_files}}
+\index{generate\_files@{generate\_files}!main@{main}}
+\doxysubsubsection{\texorpdfstring{generate\_files()}{generate\_files()}}
+{\footnotesize\ttfamily generate\+\_\+files (\begin{DoxyParamCaption}\item[{}]{instance\+\_\+data,  }\item[{}]{ssh\+\_\+key }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} @brief Generate files for use with SSH. This is a helper function to generate the files.
+ @param instance_data A list of dictionaries containing information on instances
+ @param ssh_key The SSH key for
+\end{DoxyVerb}
+ \Hypertarget{namespacemain_a8eeadfeefabf8b4349e8d157d8cbcd2e}\label{namespacemain_a8eeadfeefabf8b4349e8d157d8cbcd2e} 
+\index{main@{main}!get\_instance\_data@{get\_instance\_data}}
+\index{get\_instance\_data@{get\_instance\_data}!main@{main}}
+\doxysubsubsection{\texorpdfstring{get\_instance\_data()}{get\_instance\_data()}}
+{\footnotesize\ttfamily get\+\_\+instance\+\_\+data (\begin{DoxyParamCaption}\item[{}]{region }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Get data on EC2 instances for a specific region.
+\end{DoxyVerb}
+ \Hypertarget{namespacemain_a58232ea760d103359b0671439338914e}\label{namespacemain_a58232ea760d103359b0671439338914e} 
+\index{main@{main}!log@{log}}
+\index{log@{log}!main@{main}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily log (\begin{DoxyParamCaption}\item[{}]{message,  }\item[{}]{file = {\ttfamily \textquotesingle{}logs/main\+\_\+log.log\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} @brief Creates a timestamp and the username in the log file.
+ @param message The message to be recorded should be a string.
+ @param file The file to write to.
+\end{DoxyVerb}
+ \Hypertarget{namespacemain_a9f2aefa74d0e3c034b6521a823cea9c8}\label{namespacemain_a9f2aefa74d0e3c034b6521a823cea9c8} 
+\index{main@{main}!log\_instance\_status@{log\_instance\_status}}
+\index{log\_instance\_status@{log\_instance\_status}!main@{main}}
+\doxysubsubsection{\texorpdfstring{log\_instance\_status()}{log\_instance\_status()}}
+{\footnotesize\ttfamily log\+\_\+instance\+\_\+status (\begin{DoxyParamCaption}\item[{}]{instance\+\_\+name,  }\item[{}]{status,  }\item[{}]{region }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Groups instance status with colors.
+@param instance_name Name of the running instance
+@param status The instance status as defined in the command.
+@param region The region to which the instance belongs
+\end{DoxyVerb}
+ \Hypertarget{namespacemain_a843746d00af85c8c6fa703c8cb477b67}\label{namespacemain_a843746d00af85c8c6fa703c8cb477b67} 
+\index{main@{main}!open\_file@{open\_file}}
+\index{open\_file@{open\_file}!main@{main}}
+\doxysubsubsection{\texorpdfstring{open\_file()}{open\_file()}}
+{\footnotesize\ttfamily open\+\_\+file (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{mode,  }\item[{}]{content = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} @brief Open and read a file. This function is used to read or write file content.
+ @param filename name of the file to open
+ @param mode file mode (r t t)
+ @param content The file content (optional) defaults to None
+ @return file content (rỡw) or None if there is an error (unset mode)
+\end{DoxyVerb}
+ \Hypertarget{namespacemain_aeab9364f19a9f658d826a9722ff3027c}\label{namespacemain_aeab9364f19a9f658d826a9722ff3027c} 
+\index{main@{main}!read\_config@{read\_config}}
+\index{read\_config@{read\_config}!main@{main}}
+\doxysubsubsection{\texorpdfstring{read\_config()}{read\_config()}}
+{\footnotesize\ttfamily read\+\_\+config (\begin{DoxyParamCaption}\item[{}]{yaml\+\_\+file\+\_\+path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} @brief Read a YAML file and return its content as a dictionary.
+ @param yaml_file_path The path to the YAML file to read.
+ @return The YAML file content as a dictionary.
+\end{DoxyVerb}
+ 
